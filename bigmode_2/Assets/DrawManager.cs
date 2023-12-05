@@ -28,7 +28,7 @@ public class DrawManager : MonoBehaviour
         if(Input.GetMouseButtonUp(0))
         {
             //Debug.Log("do we keep getting here? and with how many points? " + _currentLine.points );
-            //_currentLine.GenerateColliders(_currentLine.points);
+            _currentLine.GenerateColliders(_currentLine.points);
             _currentLine.GetComponent<Rigidbody2D>().gravityScale = 1;
         }
     }

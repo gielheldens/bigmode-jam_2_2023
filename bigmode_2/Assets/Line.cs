@@ -16,7 +16,7 @@ public class Line : MonoBehaviour
 
 
     private Vector2 _initPos;
-    private Vector2 _prevPos;
+    //private Vector2 _prevPos;
     public List<Vector2> points = new List<Vector2>();
 
     void Start()
@@ -32,32 +32,33 @@ public class Line : MonoBehaviour
 
     public void SetPosition(Vector2 pos)
     {
-        if(!CanAppend(pos)) return;
-
+        if(!ShouldAppend(pos)) return;
+        points.Add(pos);
         _lineRenderer.positionCount++;
         if(_lineRenderer.positionCount ==1) _initPos = pos;
         _lineRenderer.SetPosition(_lineRenderer.positionCount-1, pos - _initPos);
-
-        if(_lineRenderer.positionCount >= 2) GenerateCollider(pos);
-        
-        _prevPos = pos;
     }
 
-    private bool CanAppend(Vector2 pos)
+    private bool ShouldAppend(Vector2 pos)
     {
         if(_lineRenderer.positionCount == 0) return true;
         return Vector2.Distance(_lineRenderer.GetPosition(_lineRenderer.positionCount -1), pos - _initPos) > DrawManager.RESOLUTION;
     }
 
-    private void GenerateCollider(Vector2 pos)
+    public void GenerateColliders(List<Vector2> colliderPoints)
     {
-        float distance = Vector2.Distance(_prevPos, pos);
-        float angle = AngleBetweenPoints(_prevPos, pos);
-        GameObject capsule = Instantiate(_colliderPrefab, pos, Quaternion.identity, transform);
-        capsule.transform.rotation = Quaternion.Euler(0f, 0f, angle);
-        CapsuleCollider2D collider = capsule.GetComponent<CapsuleCollider2D>();
-        collider.size = new Vector2(distance + _lineWidth, _lineWidth);
-        collider.offset = new Vector2(-(distance/2), 0f);
+        for (int i = 1; i < colliderPoints.Count; i++)
+        {
+            Vector2 pos = colliderPoints[i];
+            Vector2 prevPos = colliderPoints[i-1];
+            float distance = Vector2.Distance(prevPos, pos);
+            float angle = AngleBetweenPoints(prevPos, pos);
+            GameObject capsule = Instantiate(_colliderPrefab, pos, Quaternion.identity, transform);
+            capsule.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+            CapsuleCollider2D collider = capsule.GetComponent<CapsuleCollider2D>();
+            collider.size = new Vector2(distance + _lineWidth, _lineWidth);
+            collider.offset = new Vector2(-(distance/2), 0f);
+        }
     }
 
     private float AngleBetweenPoints(Vector2 point1, Vector2 point2)
