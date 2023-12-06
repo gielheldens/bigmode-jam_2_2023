@@ -32,17 +32,27 @@ public class Line : MonoBehaviour
 
     public void SetPosition(Vector2 pos)
     {
-        if(!ShouldAppend(pos)) return;
-        points.Add(pos);
+        Vector2 closestPos = ColliderCheck(pos);
+        if(!ShouldAppend(closestPos)) return;
+        points.Add(closestPos);
         _lineRenderer.positionCount++;
         if(_lineRenderer.positionCount ==1) _initPos = pos;
-        _lineRenderer.SetPosition(_lineRenderer.positionCount-1, pos - _initPos);
+        _lineRenderer.SetPosition(_lineRenderer.positionCount-1, closestPos - _initPos);
     }
 
     private bool ShouldAppend(Vector2 pos)
     {
         if(_lineRenderer.positionCount == 0) return true;
         return Vector2.Distance(_lineRenderer.GetPosition(_lineRenderer.positionCount -1), pos - _initPos) > DrawManager.RESOLUTION;
+    }
+
+    private Vector2 ColliderCheck(Vector2 pos)
+    {
+
+        Collider2D targetCollider = GameObject.FindGameObjectsWithTag("DynamicDrawing")[0].GetComponent<Collider2D>();
+        Vector2 closestPoint = targetCollider.bounds.ClosestPoint(pos);
+        DebugDrawCircle(pos, 0.1f, Color.red);
+        return closestPoint;
     }
 
     public void GenerateColliders(List<Vector2> colliderPoints)
@@ -68,5 +78,25 @@ public class Line : MonoBehaviour
         float angle = Mathf.Atan2(deltaY, deltaX) * Mathf.Rad2Deg;
 
         return angle;
+    }
+
+    private void DebugDrawCircle(Vector2 center, float radius, Color color)
+    {
+        int segments = 36;
+        float angleIncrement = 360f / segments;
+
+        for (float angle = 0; angle < 360; angle += angleIncrement)
+        {
+            float x = center.x + radius * Mathf.Cos(Mathf.Deg2Rad * angle);
+            float y = center.y + radius * Mathf.Sin(Mathf.Deg2Rad * angle);
+            Vector2 start = new Vector2(x, y);
+
+            float nextAngle = angle + angleIncrement;
+            x = center.x + radius * Mathf.Cos(Mathf.Deg2Rad * nextAngle);
+            y = center.y + radius * Mathf.Sin(Mathf.Deg2Rad * nextAngle);
+            Vector2 end = new Vector2(x, y);
+
+            Debug.DrawLine(start, end, color);
+        }
     }
 }
