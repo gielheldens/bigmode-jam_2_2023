@@ -12,7 +12,7 @@ public class Line : MonoBehaviour
     [SerializeField] private GameObject _colliderPrefab;
 
     [Header ("Attributes")]
-    [SerializeField] private float _lineWidth = 0.1f;
+    [SerializeField] private float _lineWidth = 0.2f;
 
 
     private Vector2 _initPos;
@@ -21,7 +21,7 @@ public class Line : MonoBehaviour
 
     void Start()
     {
-        
+        _lineWidth = _lineRenderer.startWidth;
     }
 
     void Update()
