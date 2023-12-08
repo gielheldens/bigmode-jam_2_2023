@@ -12,9 +12,7 @@ public class DrawManager : MonoBehaviour
     public const float RESOLUTION = 0.1f;
 
     // draw variables
-    public Collider2D currentDrawBox;
     public string drawMode;
-    private Transform drawParent;
 
     // line references
     private Line _currentLine;
@@ -27,25 +25,23 @@ public class DrawManager : MonoBehaviour
     void Update()
     {
         Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
-        drawParent = playerController.drawParent;
+        Transform drawParent = playerController.drawParent;
 
-        DrawBox();
         if(drawParent!= null) 
         {
             drawMode = DrawMode(drawParent);
-            Draw(mousePos);
+            Draw(mousePos, drawParent, DrawBox(drawParent));
         }
-        
     }
 
-    private void Draw(Vector2 mousePos)
+    private void Draw(Vector2 mousePos, Transform parent, Collider2D drawBox)
     {
   
-        if(Input.GetMouseButtonDown(0)) _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity, drawParent);
+        if(Input.GetMouseButtonDown(0)) _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity, parent);
 
         if(Input.GetMouseButton(0)) 
         {
-            _currentLine.SetPosition(mousePos, currentDrawBox);
+            _currentLine.SetPosition(mousePos, drawBox);
         }
 
         if(Input.GetMouseButtonUp(0))
@@ -55,10 +51,9 @@ public class DrawManager : MonoBehaviour
         }
     }
 
-    private void DrawBox()
+    private Collider2D DrawBox(Transform parent)
     {
-        currentDrawBox = null;
-        if (drawParent != null) currentDrawBox = drawParent.Find("Box").GetComponent<Collider2D>();
+        return parent.Find("Box").GetComponent<Collider2D>();
     }
 
 
