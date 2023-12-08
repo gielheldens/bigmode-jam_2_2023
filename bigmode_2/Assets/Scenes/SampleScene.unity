@@ -1364,7 +1364,7 @@ GameObject:
   - component: {fileID: 1669297292}
   m_Layer: 0
   m_Name: Draw Mode
-  m_TagString: Dynamic
+  m_TagString: Static
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1418,7 +1418,6 @@ MonoBehaviour:
   _cam: {fileID: 519420031}
   _linePrefab: {fileID: 1289940654507410375, guid: 89b585e8dbdcbcb4fb404722f9b9c9a4, type: 3}
   playerController: {fileID: 1571624996}
-  drawMode: 
 --- !u!4 &1762959891
 Transform:
   m_ObjectHideFlags: 0

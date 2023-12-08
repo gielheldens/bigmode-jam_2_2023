@@ -72,6 +72,12 @@ public class Line : MonoBehaviour
         }
     }
 
+    public void SetBodyType(RigidbodyType2D type)
+    {
+        Rigidbody2D rb2d = transform.GetComponent<Rigidbody2D>();
+        rb2d.bodyType = type;
+    }
+
     private float AngleBetweenPoints(Vector2 point1, Vector2 point2)
     {
         float deltaX = point2.x - point1.x;

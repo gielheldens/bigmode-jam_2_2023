@@ -12,7 +12,7 @@ public class DrawManager : MonoBehaviour
     public const float RESOLUTION = 0.1f;
 
     // draw variables
-    public string drawMode;
+    //public RigidbodyType2D drawMode;
 
     // line references
     private Line _currentLine;
@@ -29,12 +29,12 @@ public class DrawManager : MonoBehaviour
 
         if(drawParent!= null) 
         {
-            drawMode = DrawMode(drawParent);
-            Draw(mousePos, drawParent, DrawBox(drawParent));
+            //drawMode = DrawMode(drawParent);
+            Draw(mousePos, drawParent, DrawBox(drawParent), DrawMode(drawParent));
         }
     }
 
-    private void Draw(Vector2 mousePos, Transform parent, Collider2D drawBox)
+    private void Draw(Vector2 mousePos, Transform parent, Collider2D drawBox, RigidbodyType2D drawMode)
     {
   
         if(Input.GetMouseButtonDown(0)) _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity, parent);
@@ -48,6 +48,7 @@ public class DrawManager : MonoBehaviour
         {
             _currentLine.GenerateColliders(_currentLine.points);
             _currentLine.GetComponent<Rigidbody2D>().gravityScale = 1;
+            _currentLine.SetBodyType(drawMode);
         }
     }
 
@@ -57,9 +58,9 @@ public class DrawManager : MonoBehaviour
     }
 
 
-    private string DrawMode(Transform parent)
+    private RigidbodyType2D DrawMode(Transform parent)
     {
-        if (parent.CompareTag("Static")) return "Static";
-        return "Dynamic";
+        if (parent.CompareTag("Static")) return RigidbodyType2D.Static;
+        return RigidbodyType2D.Dynamic;
     }
 }
