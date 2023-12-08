@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,6 +8,10 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private float horizontalInput;
+
+    // draw variables
+    public Transform drawParent;
+    public int drawMode;     // 0 is none, 1 is static, 2 is dynamic
 
     private void Start()
     {
@@ -29,5 +34,15 @@ public class PlayerController : MonoBehaviour
         Vector2 velocity = rb.velocity;
         velocity.x = horizontalInput * moveSpeed;
         rb.velocity = velocity;
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        drawParent = other.transform.parent;
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        drawParent = null;
     }
 }

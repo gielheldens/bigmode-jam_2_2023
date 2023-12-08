@@ -15,6 +15,9 @@ public class Line : MonoBehaviour
     [SerializeField] private float _lineWidth = 0.2f;
 
 
+    // references 
+    private DrawManager drawManager;
+
     private Vector2 _initPos;
     //private Vector2 _prevPos;
     public List<Vector2> points = new List<Vector2>();
@@ -30,9 +33,9 @@ public class Line : MonoBehaviour
         
     }
 
-    public void SetPosition(Vector2 pos)
+    public void SetPosition(Vector2 pos, Collider2D targetCollider)
     {
-        Vector2 closestPos = ColliderCheck(pos);
+        Vector2 closestPos = ColliderCheck(pos, targetCollider);
         if(!ShouldAppend(closestPos)) return;
         points.Add(closestPos);
         _lineRenderer.positionCount++;
@@ -46,10 +49,8 @@ public class Line : MonoBehaviour
         return Vector2.Distance(_lineRenderer.GetPosition(_lineRenderer.positionCount -1), pos - _initPos) > DrawManager.RESOLUTION;
     }
 
-    private Vector2 ColliderCheck(Vector2 pos)
+    private Vector2 ColliderCheck(Vector2 pos, Collider2D targetCollider)
     {
-
-        Collider2D targetCollider = GameObject.FindGameObjectsWithTag("DynamicDrawing")[0].GetComponent<Collider2D>();
         Vector2 closestPoint = targetCollider.bounds.ClosestPoint(pos);
         DebugDrawCircle(pos, 0.1f, Color.red);
         return closestPoint;
