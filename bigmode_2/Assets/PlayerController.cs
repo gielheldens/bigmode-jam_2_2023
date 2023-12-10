@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         // Track input in the Update function
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
         
         // You can perform non-physics related updates in Update
     }
