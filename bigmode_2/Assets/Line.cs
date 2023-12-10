@@ -13,6 +13,7 @@ public class Line : MonoBehaviour
 
     [Header ("Attributes")]
     [SerializeField] private float _lineWidth = 0.2f;
+    [SerializeField] private float _massChildFactor = 0.5f;
 
 
     // references 
@@ -70,6 +71,13 @@ public class Line : MonoBehaviour
             collider.size = new Vector2(distance + _lineWidth, _lineWidth);
             collider.offset = new Vector2(-(distance/2), 0f);
         }
+    }
+
+    public void SetMass()
+    {
+        Rigidbody2D rb2d = transform.GetComponent<Rigidbody2D>();
+        int children = transform.childCount;
+        rb2d.mass = children * _massChildFactor;
     }
 
     public void SetBodyType(RigidbodyType2D type)

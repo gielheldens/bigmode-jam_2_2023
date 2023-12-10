@@ -47,8 +47,10 @@ public class DrawManager : MonoBehaviour
         if(Input.GetMouseButtonUp(0))
         {
             _currentLine.GenerateColliders(_currentLine.points);
+            _currentLine.SetMass();
             _currentLine.GetComponent<Rigidbody2D>().gravityScale = 1;
             _currentLine.SetBodyType(drawMode);
+            
         }
     }
 
