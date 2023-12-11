@@ -5,9 +5,8 @@ using UnityEngine;
 public class DrawManager : MonoBehaviour
 {
     [Header ("References")]
-    [SerializeField] private Camera _cam;
+    //[SerializeField] private Camera _cam;
     [SerializeField] private Line _linePrefab;
-    [SerializeField] private PlayerController playerController;
 
     [Header ("Attributes")]
     [SerializeField] private string lineName;
@@ -15,18 +14,25 @@ public class DrawManager : MonoBehaviour
 
     [Header ("Tags")]
     [SerializeField] private string drawBoxTag;
+    [SerializeField] private string cameraTag;
+
+    [Header ("Booleans")]
+    public bool drawing;
+
+    // private references
+    private Camera _cam;
 
     public const float RESOLUTION = 0.1f;
 
     // draw variables
     private GameObject[] _drawBoxes;
-    public bool drawing;
     private Line _currentLine;
     private Transform _drawParent;
 
 
     void Start()
     {
+        _cam = GameObject.FindWithTag(cameraTag).GetComponent<Camera>();
         _drawBoxes = GameObject.FindGameObjectsWithTag(drawBoxTag);
     }
 
@@ -47,6 +53,8 @@ public class DrawManager : MonoBehaviour
         if(Input.GetMouseButtonDown(0)) 
         {
             _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity, parent);
+            DestroyOldLine(_drawParent, lineName);
+            _currentLine.name = lineName;
             if (drawMode == RigidbodyType2D.Static) _currentLine.SetLineColor(colors, 0);
             else _currentLine.SetLineColor(colors, 1);
             drawing = true;
@@ -65,8 +73,8 @@ public class DrawManager : MonoBehaviour
             _currentLine.SetMass();
             _currentLine.GetComponent<Rigidbody2D>().gravityScale = 1;
             _currentLine.SetBodyType(drawMode);
-            DestroyOldLine(_drawParent, lineName);
-            _currentLine.name = lineName;
+            // DestroyOldLine(_drawParent, lineName);
+            // _currentLine.name = lineName;
             _drawParent = null;
         }
     }
