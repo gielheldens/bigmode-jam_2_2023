@@ -1,48 +1,39 @@
+//using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header ("References")]
+    [SerializeField] private DrawManager drawManager;
+    [SerializeField] private Rigidbody2D rb2d;
+
+
+    [Header ("Attributes")]
     [SerializeField]
     private float moveSpeed = 5f;
 
-    private Rigidbody2D rb;
+    // movement variables
     private float horizontalInput;
-
-    // draw variables
-    public Transform drawParent;
-    public int drawMode;     // 0 is none, 1 is static, 2 is dynamic
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
 
     private void Update()
     {
-        // Track input in the Update function
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        
-        // You can perform non-physics related updates in Update
     }
 
     private void FixedUpdate()
     {
-        // Physics-related updates should be done in FixedUpdate
-
-        // Update velocity based on input
-        Vector2 velocity = rb.velocity;
-        velocity.x = horizontalInput * moveSpeed;
-        rb.velocity = velocity;
-    }
-
-    void OnTriggerStay2D(Collider2D other)
-    {
-        drawParent = other.transform.parent;
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        drawParent = null;
+        Vector2 velocity = rb2d.velocity;
+        if (drawManager.drawing)
+        {
+            rb2d.bodyType = RigidbodyType2D.Kinematic;
+            rb2d.velocity = Vector2.zero;
+        }
+        else
+        {
+            rb2d.bodyType = RigidbodyType2D.Dynamic;
+            velocity.x = horizontalInput * moveSpeed;
+            rb2d.velocity = velocity;
+        }
     }
 }

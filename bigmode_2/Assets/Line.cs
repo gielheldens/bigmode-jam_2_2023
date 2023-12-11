@@ -16,22 +16,13 @@ public class Line : MonoBehaviour
     [SerializeField] private float _massChildFactor = 0.5f;
 
 
-    // references 
-    private DrawManager drawManager;
-
+    // draw variables
     private Vector2 _initPos;
-    //private Vector2 _prevPos;
     public List<Vector2> points = new List<Vector2>();
 
     void Start()
     {
         _lineWidth = _lineRenderer.startWidth;
-    }
-
-    void Update()
-    {
-
-        
     }
 
     public void SetPosition(Vector2 pos, Collider2D targetCollider)
