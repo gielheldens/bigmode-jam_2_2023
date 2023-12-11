@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3403393781570781373}
   - component: {fileID: 1687698719106317016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule Collider
-  m_TagString: Untagged
+  m_TagString: Line
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 5337641710728225589}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 381efee7f71d10c4c96bb7be9602a621, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
