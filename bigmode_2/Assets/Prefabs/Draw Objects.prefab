@@ -74,9 +74,9 @@ SpriteShapeRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: -1390481621
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Color: {r: 0.038417988, g: 0.674, b: 0.5808543, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: af0d50eea13ce3a40a0c2e8a692fb4d8, type: 3}
@@ -95,7 +95,7 @@ SpriteShapeRenderer:
   - {fileID: 0}
   m_LocalAABB:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 1.0666668, y: 0.16666669, z: 0}
+    m_Extent: {x: 0.8000001, y: 0.22, z: 0}
   m_SpriteSortPoint: 0
 --- !u!114 &7538233082485593297
 MonoBehaviour:
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Spline:
     m_IsOpenEnded: 0
     m_ControlPoints:
-    - position: {x: -1, y: -0.1, z: 0}
+    - position: {x: -0.7, y: -0.12, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: -1, y: 0.1, z: 0}
+    - position: {x: -0.7, y: 0.12, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 1, y: 0.1, z: 0}
+    - position: {x: 0.7, y: 0.12, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -136,7 +136,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 1, y: -0.1, z: 0}
+    - position: {x: 0.70000005, y: -0.12, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -193,7 +193,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.002185464, y: 0.005815983}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -204,7 +204,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0907066, y: 0.37243748}
+  m_Size: {x: 1.5, y: 0.35}
   m_EdgeRadius: 0
 --- !u!114 &8456294126277068946
 MonoBehaviour:
@@ -331,9 +331,9 @@ SpriteShapeRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingLayerID: -1888142927
+  m_SortingLayer: 3
+  m_SortingOrder: 0
   m_Color: {r: 0.039215688, g: 0.6745098, b: 0.5803922, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 0}
