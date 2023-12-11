@@ -77,6 +77,12 @@ public class Line : MonoBehaviour
         rb2d.bodyType = type;
     }
 
+    public void SetLineColor(Color[] colors, int ind)
+    {
+        _lineRenderer.startColor = colors[ind];
+        _lineRenderer.endColor = colors[ind];
+    }
+    
     private float AngleBetweenPoints(Vector2 point1, Vector2 point2)
     {
         float deltaX = point2.x - point1.x;

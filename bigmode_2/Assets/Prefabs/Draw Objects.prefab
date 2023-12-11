@@ -218,13 +218,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba7b08923d46f14f85c692d18ec0ee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawManagerTag: 
   _boxSprite: {fileID: 1526965071511951735}
   _boxCollider: {fileID: 2720118883583083991}
   _layerMask:
     serializedVersion: 2
     m_Bits: 192
   _myCollider: {fileID: 9217675338073407072}
+  _triggerSprite: {fileID: 3984116016928191873}
+  drawManagerTag: DrawManager
+  staticTag: Static
+  isTouching: 0
 --- !u!1 &7603054020402335737
 GameObject:
   m_ObjectHideFlags: 0

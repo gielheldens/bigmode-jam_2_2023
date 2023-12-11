@@ -11,6 +11,7 @@ public class DrawManager : MonoBehaviour
 
     [Header ("Attributes")]
     [SerializeField] private string lineName;
+    public Color[] colors;
 
     [Header ("Tags")]
     [SerializeField] private string drawBoxTag;
@@ -43,23 +44,30 @@ public class DrawManager : MonoBehaviour
     private void Draw(Vector2 mousePos, Transform parent, Collider2D drawBox, RigidbodyType2D drawMode)
     {
   
-        if(Input.GetMouseButtonDown(0)) _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity, parent);
+        if(Input.GetMouseButtonDown(0)) 
+        {
+            _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity, parent);
+            if (drawMode == RigidbodyType2D.Static) _currentLine.SetLineColor(colors, 0);
+            else _currentLine.SetLineColor(colors, 1);
+            drawing = true;
+        }
 
         if(Input.GetMouseButton(0)) 
         {
             _currentLine.SetPosition(mousePos, drawBox);
-            drawing = true;
         }
 
         if(Input.GetMouseButtonUp(0))
         {
             drawing = false;
             _currentLine.GenerateColliders(_currentLine.points);
+            
             _currentLine.SetMass();
             _currentLine.GetComponent<Rigidbody2D>().gravityScale = 1;
             _currentLine.SetBodyType(drawMode);
             DestroyOldLine(_drawParent, lineName);
             _currentLine.name = lineName;
+            _drawParent = null;
         }
     }
 
