@@ -22,11 +22,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 5f;
 
-    // draw variables
-    private bool _wasDrawing;
-
     // movement variables
     private float horizontalInput;
+
 
     private void Update()
     {
@@ -52,38 +50,14 @@ public class PlayerController : MonoBehaviour
 
     private void AnimationState()
     {
-        if(!_wasDrawing)
+        _animator.SetBool("drawing", false);
+        _animator.SetBool("walking", false);
+        if(_drawManager.drawing) _animator.SetBool("drawing", true);
+        else if (MathF.Abs(horizontalInput) > 0f) 
         {
-            if(_drawManager.drawing)
-            {
-                _wasDrawing = true;
-                _animator.Play(_enterDraw);
-            }
-            else if(MathF.Abs(horizontalInput) > 0f) 
-            {
-                _sprite.flipX = false;
-                _animator.Play(_playerWalk);
-                if(horizontalInput < 0f) _sprite.flipX = true;
-            }
-            else _animator.Play(_playerIdle);
+            _sprite.flipX = false;
+            if(horizontalInput < 0f) _sprite.flipX = true;
+            _animator.SetBool("walking", true);
         }
-        else if (!_drawManager.drawing) 
-        {
-            Debug.Log("do we get here then?");
-            _animator.Play(_exitDraw);
-        }
-        _wasDrawing = _drawManager.drawing;
     }
-
-    private void EnterDrawState()
-    {
-        _animator.Play(_playerDraw);
-    }
-
-    private void EnterIdle()
-    {
-        Debug.Log("do we get here?");
-        _animator.Play(_playerIdle);
-    }
-
 }
