@@ -7,7 +7,7 @@ using UnityEngine.Rendering;
 public class PlayerController : MonoBehaviour
 {
     [Header ("References")]
-    [SerializeField] private DrawManager _drawManager;
+    //[SerializeField] private DrawManager _drawManager;
     [SerializeField] private Rigidbody2D _rb2d;
     [SerializeField] private string _playerWalk;
     [SerializeField] private string _playerIdle;
@@ -22,8 +22,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 5f;
 
+    [Header ("Tags")]
+    [SerializeField] string drawManagerTag;
+
     // movement variables
     private float horizontalInput;
+
+    // private references
+    private DrawManager _drawManager;
+
+    void Start()
+    {
+        _drawManager = GameObject.FindWithTag(drawManagerTag).GetComponent<DrawManager>();
+    }
 
 
     private void Update()
