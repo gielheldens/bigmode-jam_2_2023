@@ -47,6 +47,8 @@ public class DrawManager : MonoBehaviour
         if(Input.GetMouseButtonDown(0)) 
         {
             _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity, parent);
+            DestroyOldLine(_drawParent, lineName);
+            _currentLine.name = lineName;
             if (drawMode == RigidbodyType2D.Static) _currentLine.SetLineColor(colors, 0);
             else _currentLine.SetLineColor(colors, 1);
             drawing = true;
@@ -65,8 +67,8 @@ public class DrawManager : MonoBehaviour
             _currentLine.SetMass();
             _currentLine.GetComponent<Rigidbody2D>().gravityScale = 1;
             _currentLine.SetBodyType(drawMode);
-            DestroyOldLine(_drawParent, lineName);
-            _currentLine.name = lineName;
+            // DestroyOldLine(_drawParent, lineName);
+            // _currentLine.name = lineName;
             _drawParent = null;
         }
     }
