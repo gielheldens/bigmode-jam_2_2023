@@ -47,6 +47,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Trigger
+    uniqueID: 2904485675
+    locked: 0
+  - name: Environment
+    uniqueID: 3175061165
+    locked: 0
+  - name: DrawBox
+    uniqueID: 2406824369
+    locked: 0
   - name: Line
     uniqueID: 3252375125
     locked: 0
