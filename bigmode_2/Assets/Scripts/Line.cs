@@ -12,13 +12,14 @@ public class Line : MonoBehaviour
     [SerializeField] private GameObject _colliderPrefab;
 
     [Header ("Attributes")]
-    [SerializeField] private float _lineWidth = 0.2f;
     [SerializeField] private float _massChildFactor = 0.5f;
+    [SerializeField] private float _colliderWidth;
 
 
     // draw variables
     private Vector2 _initPos;
     public List<Vector2> points = new List<Vector2>();
+    private float _lineWidth;
 
     void Start()
     {
@@ -59,7 +60,7 @@ public class Line : MonoBehaviour
             GameObject capsule = Instantiate(_colliderPrefab, pos, Quaternion.identity, transform);
             capsule.transform.rotation = Quaternion.Euler(0f, 0f, angle);
             CapsuleCollider2D collider = capsule.GetComponent<CapsuleCollider2D>();
-            collider.size = new Vector2(distance + _lineWidth, _lineWidth);
+            collider.size = new Vector2(distance + _lineWidth, _colliderWidth);
             collider.offset = new Vector2(-(distance/2), 0f);
         }
     }
