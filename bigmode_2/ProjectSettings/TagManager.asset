@@ -10,6 +10,7 @@ TagManager:
   - DrawManager
   - DrawBox
   - Line
+  - LevelManager
   layers:
   - Default
   - TransparentFX
@@ -64,4 +65,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3686872231
+    locked: 0
+  - name: Fade
+    uniqueID: 477201265
     locked: 0

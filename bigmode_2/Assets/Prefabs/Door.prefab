@@ -178,6 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _nextScene: LevelB
   _playerTag: Player
+  _levelManagerTag: LevelManager
 --- !u!1 &8605397843485344047
 GameObject:
   m_ObjectHideFlags: 0
