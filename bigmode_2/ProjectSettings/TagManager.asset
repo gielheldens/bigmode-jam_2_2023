@@ -50,6 +50,9 @@ TagManager:
   - name: Trigger
     uniqueID: 2904485675
     locked: 0
+  - name: Door
+    uniqueID: 3804073729
+    locked: 0
   - name: Environment
     uniqueID: 3175061165
     locked: 0

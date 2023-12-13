@@ -76,7 +76,7 @@ SpriteShapeRenderer:
   m_SortingLayerID: -1119906131
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Color: {r: 0.25490198, g: 0.25490198, b: 0.24313727, a: 1}
+  m_Color: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 0}
   m_Sprites:
@@ -93,8 +93,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 4d35170ec2cc9154091a5663b00747b4, type: 3}
   - {fileID: 21300000, guid: 3233de0e9134fe140a419282f028ae40, type: 3}
   m_LocalAABB:
-    m_Center: {x: 0, y: -0.25, z: 0}
-    m_Extent: {x: 0.099999994, y: 0.95000005, z: 0}
+    m_Center: {x: -0.0015995428, y: -0.48034406, z: 0}
+    m_Extent: {x: 0.10221469, y: 0.71996284, z: 0}
   m_SpriteSortPoint: 0
 --- !u!114 &4479220458699547639
 MonoBehaviour:
@@ -119,7 +119,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-    - position: {x: 0, y: 0.5, z: 0}
+    - position: {x: -0.0031991005, y: 0.039311886, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -221,7 +221,7 @@ SpriteShapeRenderer:
   m_SortingLayerID: -1119906131
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_Color: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: af0d50eea13ce3a40a0c2e8a692fb4d8, type: 3}
   m_Sprites:

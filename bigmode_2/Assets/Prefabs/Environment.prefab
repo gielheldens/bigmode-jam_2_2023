@@ -76,7 +76,7 @@ SpriteShapeRenderer:
   m_SortingLayerID: -1119906131
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Color: {r: 0.1882353, g: 0.1882353, b: 0.1882353, a: 0.96862745}
+  m_Color: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 0}
   m_Sprites:
@@ -88,10 +88,10 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 72e9e28ecbe57c748b06e8ee8d5da94f, type: 3}
   - {fileID: 21300000, guid: 4d35170ec2cc9154091a5663b00747b4, type: 3}
   - {fileID: 21300000, guid: 3233de0e9134fe140a419282f028ae40, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 31042e147c1a4a848969067ab80ea395, type: 3}
+  - {fileID: 21300000, guid: 72e9e28ecbe57c748b06e8ee8d5da94f, type: 3}
+  - {fileID: 21300000, guid: 4d35170ec2cc9154091a5663b00747b4, type: 3}
+  - {fileID: 21300000, guid: 3233de0e9134fe140a419282f028ae40, type: 3}
   m_LocalAABB:
     m_Center: {x: 4.1500006, y: 0.45000005, z: 0}
     m_Extent: {x: 2.9500003, y: 1.6500001, z: 0}
