@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b75cb5abd1b2bb341953566054aeef72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _groundTag: 
   grounded: 0
 --- !u!1 &5330287848724185170
 GameObject:
