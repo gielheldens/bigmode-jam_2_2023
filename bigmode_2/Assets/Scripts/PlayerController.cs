@@ -62,8 +62,6 @@ public class PlayerController : MonoBehaviour
     {
         Inputs();
         AnimationState();
-
-        Debug.Log("am I groundeD? " + _feet.grounded + " am I on slope? " + _onSlope + " where am I facing? " + Facing());
     }
 
     private void FixedUpdate()
