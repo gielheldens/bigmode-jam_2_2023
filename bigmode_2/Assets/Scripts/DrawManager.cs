@@ -46,9 +46,6 @@ public class DrawManager : MonoBehaviour
         HoverDrawParent(mousePos, _drawBoxLayer);
         SetDrawParent();
 
-        if(_drawParent != null) Debug.Log("we have a parent " + _drawParent.name);
-        if(_hoverDrawParent != null) Debug.Log("we hover a parent " + _hoverDrawParent.name);
-
         if((_draw && _drawParent!= null) || drawing) 
         {
             Draw(mousePos, _drawParent, DrawBox(_drawParent), DrawMode(_drawParent));

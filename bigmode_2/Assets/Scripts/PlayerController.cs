@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
     {
         Inputs();
         AnimationState();
+        Debug.Log(_feet.grounded);
     }
 
     private void FixedUpdate()
@@ -97,7 +98,9 @@ public class PlayerController : MonoBehaviour
             }
             else if (!_feet.grounded)
             {
-                velocity.x = _horizontalInput * _moveSpeed;
+                Debug.Log("so we do get here?");
+                velocity = new Vector2(_horizontalInput * _moveSpeed, _rb2d.velocity.y);
+                //velocity.x = _horizontalInput * _moveSpeed;
             }
         }
         _rb2d.velocity = velocity;
