@@ -45,11 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _linePrefab: {fileID: 1289940654507410375, guid: 89b585e8dbdcbcb4fb404722f9b9c9a4, type: 3}
+  _drawBoxLayer:
+    serializedVersion: 2
+    m_Bits: 512
   lineName: Drawing
   colors:
   - {r: 0.6745098, g: 0.19607843, b: 0.20784314, a: 1}
   - {r: 0.050980397, g: 0.6745098, b: 0.5803922, a: 1}
   drawBoxTag: DrawBox
   cameraTag: MainCamera
-  playerTag: 
   drawing: 0
