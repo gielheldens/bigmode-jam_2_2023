@@ -3,6 +3,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.TextCore.Text;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,17 +17,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private string _exitDraw;
     [SerializeField] private Animator _animator;
     [SerializeField] private SpriteRenderer _sprite;
+    [SerializeField] private Feet _feet;
 
 
     [Header ("Attributes")]
-    [SerializeField]
-    private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float _lerpSpeed;
+    [SerializeField] private float _walkAnimCutoff;
 
     [Header ("Tags")]
     [SerializeField] string drawManagerTag;
 
     // movement variables
-    private float horizontalInput;
+    private float _horizontalInput;
+    private float _moveTimer;
+    //private bool _canMove;
 
     // private references
     private DrawManager _drawManager;
@@ -39,7 +44,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        Debug.Log(_rb2d.velocity.y);
+        Movement();
         AnimationState();
     }
 
@@ -54,9 +60,20 @@ public class PlayerController : MonoBehaviour
         else
         {
             _rb2d.bodyType = RigidbodyType2D.Dynamic;
-            velocity.x = horizontalInput * moveSpeed;
-            _rb2d.velocity = velocity;
+            if (_feet.canMove)
+            {
+                velocity.x = _horizontalInput * moveSpeed;
+                _rb2d.velocity = velocity;
+            }
+            
         }
+    }
+
+    private void Movement()
+    {
+        if (_feet.canMove) _horizontalInput = Input.GetAxisRaw("Horizontal");
+        //else _horizontalInput = Mathf.Lerp(_horizontalInput, 0f, _lerpSpeed * Time.deltaTime);
+        
     }
 
     private void AnimationState()
@@ -64,11 +81,13 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("drawing", false);
         _animator.SetBool("walking", false);
         if(_drawManager.drawing) _animator.SetBool("drawing", true);
-        else if (MathF.Abs(horizontalInput) > 0f) 
+        else if (Mathf.Abs(_horizontalInput) > 0f && _feet.canMove) 
         {
             _sprite.flipX = false;
-            if(horizontalInput < 0f) _sprite.flipX = true;
+            if(_horizontalInput < 0f) _sprite.flipX = true;
             _animator.SetBool("walking", true);
         }
     }
+
+
 }
