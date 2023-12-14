@@ -5,15 +5,15 @@ using UnityEngine;
 public class Feet : MonoBehaviour
 {
 
-    public bool canMove;
+    public bool grounded;
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        canMove = true;
+        grounded = true;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        canMove = false;
+        grounded = false;
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9185443192444723125}
   - component: {fileID: 2600737612692750250}
   - component: {fileID: 5650442381654727953}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteShapeRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1119906131
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Color: {r: 0.11372549, g: 0.11372549, b: 0.11372549, a: 1}
   m_MaskInteraction: 0
