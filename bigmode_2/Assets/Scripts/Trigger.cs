@@ -27,6 +27,8 @@ public class Trigger : MonoBehaviour
     void Start()
     {
         drawManager = GameObject.FindWithTag(drawManagerTag).GetComponent<DrawManager>();
+        _boxSprite.enabled = false;
+        _boxCollider.enabled = false;
         SetColor(_triggerSprite);
         // if (transform.parent.CompareTag(staticTag)) _triggerSprite.color = drawManager.colors[0];
         // else _triggerSprite.color = drawManager.colors[1];

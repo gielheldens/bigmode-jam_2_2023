@@ -10,6 +10,7 @@ TagManager:
   - DrawManager
   - DrawBox
   - Line
+  - LevelManager
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - UI
   - Line
   - Player
-  - 
+  - Environment
   - 
   - 
   - 
@@ -50,6 +51,9 @@ TagManager:
   - name: Trigger
     uniqueID: 2904485675
     locked: 0
+  - name: Door
+    uniqueID: 3804073729
+    locked: 0
   - name: Environment
     uniqueID: 3175061165
     locked: 0
@@ -61,4 +65,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3686872231
+    locked: 0
+  - name: Fade
+    uniqueID: 477201265
     locked: 0

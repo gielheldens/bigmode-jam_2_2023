@@ -204,7 +204,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.35}
+  m_Size: {x: 1.6, y: 0.4628687}
   m_EdgeRadius: 0
 --- !u!114 &8456294126277068946
 MonoBehaviour:
@@ -302,7 +302,7 @@ SpriteShapeRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8767019357770389900}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 0
@@ -335,7 +335,7 @@ SpriteShapeRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1888142927
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Color: {r: 0.039215688, g: 0.6745098, b: 0.5803922, a: 1}
   m_MaskInteraction: 0
@@ -355,7 +355,7 @@ SpriteShapeRenderer:
   - {fileID: 0}
   m_LocalAABB:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 2.0666668, y: 2.0666668, z: 0}
+    m_Extent: {x: 2.1000001, y: 2.1000001, z: 0}
   m_SpriteSortPoint: 0
 --- !u!114 &6164398292632989729
 MonoBehaviour:

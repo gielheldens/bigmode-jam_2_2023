@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4218638135329637038}
   - component: {fileID: -1486423864284465262}
   - component: {fileID: 1289940654507410375}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1042592171
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Positions: []
   m_Parameters:
@@ -177,6 +177,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lineRenderer: {fileID: 4218638135329637038}
   _colliderPrefab: {fileID: 5337641710728225589, guid: 0322f7f3132ec4e40845012aae56322a, type: 3}
-  _lineWidth: 0.1
   _massChildFactor: 0.2
+  _colliderWidth: 0.13
   points: []
