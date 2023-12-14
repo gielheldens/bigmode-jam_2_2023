@@ -39,6 +39,7 @@ public class DrawManager : MonoBehaviour
     void Update()
     {
         if(_drawParent != null) Debug.Log("what is the drawparent? " + _drawParent.name);
+        else Debug.Log("null");
         Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
         if (!drawing) _drawParent = SetDrawParent(mousePos);
 
@@ -74,8 +75,6 @@ public class DrawManager : MonoBehaviour
             _currentLine.SetMass();
             _currentLine.GetComponent<Rigidbody2D>().gravityScale = 1;
             _currentLine.SetBodyType(drawMode);
-            // DestroyOldLine(_drawParent, lineName);
-            // _currentLine.name = lineName;
             _drawParent = null;
         }
     }
