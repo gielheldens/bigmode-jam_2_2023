@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(_drawManager.drawing);
         Inputs();
         AnimationState();
     }
