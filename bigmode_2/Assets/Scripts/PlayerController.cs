@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
 
     // movement variables
     private float _horizontalInput;
-    private bool _pushing;
 
     // private references
     private DrawManager _drawManager;
@@ -64,7 +63,7 @@ public class PlayerController : MonoBehaviour
         Inputs();
         AnimationState();
 
-        Debug.Log("am I groundeD? " + _feet.grounded + " am I on slope? " + _onSlope);
+        Debug.Log("am I groundeD? " + _feet.grounded + " am I on slope? " + _onSlope + " where am I facing? " + Facing());
     }
 
     private void FixedUpdate()
@@ -76,8 +75,6 @@ public class PlayerController : MonoBehaviour
     private void Inputs()
     {
         _horizontalInput = Input.GetAxisRaw("Horizontal");
-        // if(Input.GetKey(KeyCode.Space)) _pushing = true;
-        // else _pushing = false;
     }
 
     private void Movement()
@@ -88,11 +85,6 @@ public class PlayerController : MonoBehaviour
             _rb2d.bodyType = RigidbodyType2D.Kinematic;
             _rb2d.velocity = Vector2.zero;
         }
-        // else if (_pushing)
-        // {
-        //     _rb2d.bodyType = RigidbodyType2D.Dynamic;
-        //     velocity = new Vector2(_horizontalInput * _moveSpeed, 0f);
-        // }
         else
         {
             _rb2d.bodyType = RigidbodyType2D.Dynamic;
@@ -105,15 +97,16 @@ public class PlayerController : MonoBehaviour
             {
                 velocity = new Vector2(_moveSpeed * _slopeNormalPerp.x * -_horizontalInput, _moveSpeed * _slopeNormalPerp.y * -_horizontalInput);
             } 
+            else if (_feet.grounded)
+            {
+                velocity = new Vector2(_horizontalInput * _moveSpeed, 0f);
+            }
             else if (!_feet.grounded)
             {
                 velocity.x = _horizontalInput * _moveSpeed;
             }
         }
         _rb2d.velocity = velocity;
-
-        
-        
     }
 
     private void SlopeCheck()
@@ -180,12 +173,6 @@ public class PlayerController : MonoBehaviour
         else return 1;
     }
 
-    // private void HoldObject(GameObject _obj, Transform _grabPoint)
-    // {
-    //     if()
-    //     _obj.GetComponent<Rigidbody2D>().constraints
-    // }
-
     private void AnimationState()
     {
         _animator.SetBool("drawing", false);
@@ -198,6 +185,4 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("walking", true);
         }
     }
-
-
 }

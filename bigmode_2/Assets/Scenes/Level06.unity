@@ -212,6 +212,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.36
       objectReference: {fileID: 0}
+    - target: {fileID: 2720118883583083991, guid: eac20e27a1a37894f9b6ec4bd02bffa8, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8021617
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720118883583083991, guid: eac20e27a1a37894f9b6ec4bd02bffa8, type: 3}
+      propertyPath: m_Size.y
+      value: 2.797485
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720118883583083991, guid: eac20e27a1a37894f9b6ec4bd02bffa8, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.50636005
+      objectReference: {fileID: 0}
+    - target: {fileID: 2720118883583083991, guid: eac20e27a1a37894f9b6ec4bd02bffa8, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.4968437
+      objectReference: {fileID: 0}
     - target: {fileID: 3984116016928191873, guid: eac20e27a1a37894f9b6ec4bd02bffa8, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
       value: 0.100000024
@@ -351,7 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 742630252}
   - component: {fileID: 742630253}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Extra Collider (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1054,7 +1070,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1605527113}
   - component: {fileID: 1605527114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Extra Collider (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1131,7 +1147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620307048}
   - component: {fileID: 1620307049}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Extra Collider (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
