@@ -11,6 +11,7 @@ TagManager:
   - DrawBox
   - Line
   - LevelManager
+  - Environment
   layers:
   - Default
   - TransparentFX
