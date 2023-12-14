@@ -77,10 +77,11 @@ public class DrawManager : MonoBehaviour
     {
         if(_draw && !drawing)
         {
-            DestroyOldLine(_drawParent, lineName);
+            //DestroyOldLine(_drawParent, lineName);
             _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity, parent);
-            _currentLine.name = lineName;
+            //_currentLine.name = lineName;
             if (drawMode == RigidbodyType2D.Static) _currentLine.SetLineColor(colors, 0);
+            //if (drawMode == RigidbodyType2D.Kinematic) _currentLine.SetLineColor(colors, 0);
             else _currentLine.SetLineColor(colors, 1);
             drawing = true;
         }
@@ -90,10 +91,12 @@ public class DrawManager : MonoBehaviour
         }
         else
         {
+            DestroyOldLine(_drawParent, lineName);
+            _currentLine.name = lineName;
             drawing = false;
             _currentLine.GenerateColliders(_currentLine.points);
             _currentLine.SetMass();
-            _currentLine.GetComponent<Rigidbody2D>().gravityScale = 1;
+            _currentLine.GetComponent<Rigidbody2D>().gravityScale = 0.8f;
             _currentLine.SetBodyType(drawMode);
             _drawParent = null;
         }
@@ -107,6 +110,7 @@ public class DrawManager : MonoBehaviour
     private RigidbodyType2D DrawMode(Transform parent)
     {
         if (parent.CompareTag("Static")) return RigidbodyType2D.Static;
+        //if (parent.CompareTag("Static")) return RigidbodyType2D.Kinematic;
         return RigidbodyType2D.Dynamic;
     }
 
