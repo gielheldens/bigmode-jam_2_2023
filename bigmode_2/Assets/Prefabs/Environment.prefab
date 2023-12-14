@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9055879570960758675}
   - component: {fileID: 9185443192444723125}
   - component: {fileID: 2600737612692750250}
-  - component: {fileID: 5650442381654727953}
+  - component: {fileID: 3406188006534874806}
   - component: {fileID: 6802746905368385353}
   m_Layer: 8
   m_Name: Environment
@@ -94,8 +94,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 4d35170ec2cc9154091a5663b00747b4, type: 3}
   - {fileID: 21300000, guid: 3233de0e9134fe140a419282f028ae40, type: 3}
   m_LocalAABB:
-    m_Center: {x: 4.1500006, y: 0.45000005, z: 0}
-    m_Extent: {x: 2.9500003, y: 1.6500001, z: 0}
+    m_Center: {x: 4.21, y: 0.5100001, z: 0}
+    m_Extent: {x: 2.8900003, y: 1.5900002, z: 0}
   m_SpriteSortPoint: 0
 --- !u!114 &2600737612692750250
 MonoBehaviour:
@@ -153,11 +153,11 @@ MonoBehaviour:
   m_Creator: {fileID: 0}
   m_Modifiers: []
   m_ColliderSegment:
-  - {x: 1.2, y: 1.9997998}
+  - {x: 1.3199999, y: 1.9997998}
   - {x: 6.9997997, y: 1.9997998}
-  - {x: 6.9997997, y: -1.2}
---- !u!61 &5650442381654727953
-BoxCollider2D:
+  - {x: 6.9997997, y: -1.08}
+--- !u!68 &3406188006534874806
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -188,19 +188,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.1500006, y: 0.45000005}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.9000006, y: 3.3000002}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0.08
+  m_Points:
+  - {x: 1.3199999, y: 1.9997998}
+  - {x: 6.9997997, y: 1.9997998}
+  - {x: 6.9997997, y: -1.08}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!114 &6802746905368385353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,5 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7588457a40b25284a96789a79c35ded0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: Environment
+  _collider: {fileID: 0}
+  _spriteShape: {fileID: 2600737612692750250}
+  _factor: -0.08
   _layer: Environment
