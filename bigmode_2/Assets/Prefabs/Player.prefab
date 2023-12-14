@@ -285,7 +285,7 @@ MonoBehaviour:
   _animator: {fileID: 1052612226133587618}
   _sprite: {fileID: 1200279733688359}
   _slopeCheckDist: 0.4
-  _maxSlopeAngle: 50
+  _maxSlopeAngle: 45
   _groundMask:
     serializedVersion: 2
     m_Bits: 320
