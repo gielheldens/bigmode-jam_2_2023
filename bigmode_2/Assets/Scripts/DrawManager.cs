@@ -38,6 +38,7 @@ public class DrawManager : MonoBehaviour
 
     void Update()
     {
+        if(_drawParent != null) Debug.Log("what is the drawparent? " + _drawParent.name);
         Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
         if (!drawing) _drawParent = SetDrawParent(mousePos);
 

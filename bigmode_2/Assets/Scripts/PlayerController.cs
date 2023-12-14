@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(_drawManager.drawing);
         Inputs();
         AnimationState();
     }
@@ -81,7 +82,7 @@ public class PlayerController : MonoBehaviour
         if (_drawManager.drawing)
         {
             _rb2d.bodyType = RigidbodyType2D.Kinematic;
-            _rb2d.velocity = Vector2.zero;
+            velocity = Vector2.zero;
         }
         else
         {
@@ -91,13 +92,9 @@ public class PlayerController : MonoBehaviour
             {
                 velocity = new Vector2(_horizontalInput * _moveSpeed, 0f);
             } 
-            else if (_feet.grounded && _onSlope && _canSlope)
+            else if (_feet.grounded && _onSlope)
             {
                 velocity = new Vector2(_moveSpeed * _slopeNormalPerp.x * -_horizontalInput, _moveSpeed * _slopeNormalPerp.y * -_horizontalInput);
-            } 
-            else if (_feet.grounded)
-            {
-                velocity = new Vector2(_horizontalInput * _moveSpeed, 0f);
             }
             else if (!_feet.grounded)
             {
