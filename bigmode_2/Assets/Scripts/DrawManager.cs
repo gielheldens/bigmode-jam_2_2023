@@ -43,7 +43,7 @@ public class DrawManager : MonoBehaviour
     {
         Vector2 mousePos = _cam.ScreenToWorldPoint(Input.mousePosition);
         MouseInput();
-        HoverDrawParent(mousePos, _drawBoxLayer); // _drawBoxLayer);
+        HoverDrawParent(mousePos, _drawBoxLayer);
         SetDrawParent();
 
         if(_drawParent != null) Debug.Log("we have a parent " + _drawParent.name);
@@ -99,53 +99,10 @@ public class DrawManager : MonoBehaviour
         }
     }
 
-    // private void Draw(Vector2 mousePos, Transform parent, Collider2D drawBox, RigidbodyType2D drawMode)
-    // {
-  
-    //     if(Input.GetMouseButtonDown(0)) 
-    //     {
-    //         DestroyOldLine(_drawParent, lineName);
-    //         _currentLine = Instantiate(_linePrefab, mousePos, Quaternion.identity, parent);
-    //         _currentLine.name = lineName;
-    //         if (drawMode == RigidbodyType2D.Static) _currentLine.SetLineColor(colors, 0);
-    //         else _currentLine.SetLineColor(colors, 1);
-    //         drawing = true;
-    //     }
-
-    //     if(Input.GetMouseButton(0)) 
-    //     {
-    //         _currentLine.SetPosition(mousePos, drawBox);
-    //     }
-
-    //     if(Input.GetMouseButtonUp(0))
-    //     {
-    //         drawing = false;
-    //         _currentLine.GenerateColliders(_currentLine.points);
-            
-    //         _currentLine.SetMass();
-    //         _currentLine.GetComponent<Rigidbody2D>().gravityScale = 1;
-    //         _currentLine.SetBodyType(drawMode);
-    //         _activeDrawParent = _drawParent;
-    //     }
-    // }
-
     private Collider2D DrawBox(Transform parent)
     {
         return parent.Find("Box").GetComponent<Collider2D>();
     }
-
-    // private Transform SetDrawParent(Vector2 pos)
-    // {
-    //     foreach (GameObject obj in _drawBoxes)
-    //     {
-    //         Collider2D drawBox = obj.GetComponent<BoxCollider2D>();
-    //         if (drawBox.enabled == true)
-    //         {
-    //             if (drawBox.bounds.Intersects(new Bounds(pos, Vector3.one))) return drawBox.transform.parent;
-    //         }
-    //     }
-    //     return null;
-    // }
 
     private RigidbodyType2D DrawMode(Transform parent)
     {
