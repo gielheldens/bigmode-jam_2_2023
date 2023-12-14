@@ -30,7 +30,6 @@ public class DrawManager : MonoBehaviour
     private Line _currentLine;
     private Transform _hoverDrawParent = null;
     private Transform _drawParent = null;
-    //private Transform _activeDrawParent;
     private bool _draw;
 
 
