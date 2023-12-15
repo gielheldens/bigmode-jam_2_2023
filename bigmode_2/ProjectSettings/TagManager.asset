@@ -16,6 +16,7 @@ TagManager:
   - PauseMenu
   - Overlay
   - UICanvas
+  - Final
   layers:
   - Default
   - TransparentFX
