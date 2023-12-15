@@ -17,6 +17,7 @@ TagManager:
   - Overlay
   - UICanvas
   - Final
+  - Music
   layers:
   - Default
   - TransparentFX

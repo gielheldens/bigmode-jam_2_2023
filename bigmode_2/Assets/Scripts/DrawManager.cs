@@ -57,7 +57,6 @@ public class DrawManager : MonoBehaviour
 
         if (drawing && !_playingDrawSound) 
         {
-            Debug.Log("do we get here?");
             _playingDrawSound = true;
             _drawingSound.Play();
         }

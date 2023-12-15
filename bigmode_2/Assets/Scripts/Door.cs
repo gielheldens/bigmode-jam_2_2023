@@ -12,6 +12,9 @@ public class Door : MonoBehaviour
     [SerializeField] private string _playerTag;
     [SerializeField] private string _levelManagerTag;
 
+    [Header ("Sounds")]
+    [SerializeField] private AudioSource _nextLvlSound;
+
     // private references
     private LevelManager _levelManager;
 
@@ -25,6 +28,7 @@ public class Door : MonoBehaviour
         if (other.CompareTag(_playerTag))
         {
             //SceneManager.LoadScene(_nextScene);
+            _nextLvlSound.Play();
             _levelManager.LoadNextLevel();
         }
     }

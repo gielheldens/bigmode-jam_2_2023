@@ -21,6 +21,10 @@ public class LevelManager : MonoBehaviour
     [Header ("Attributes")]
     [SerializeField] private float _fadeOutTime;
 
+    // private references
+    private GameObject _music;
+    
+
 
     // private variables
     public string _prevScene ="DefaultSceneName";
@@ -30,6 +34,12 @@ public class LevelManager : MonoBehaviour
     private bool _changedBG;
     public bool finalLvl;
     
+    void Awake()
+    {
+        _music = GameObject.FindWithTag("Music");
+        DontDestroyOnLoad(_music);
+    }
+
     void Start()
     {
         if(SceneManager.GetActiveScene().name == "Level18") finalLvl = true;
