@@ -28,9 +28,12 @@ public class LevelManager : MonoBehaviour
 
     private float _fadeTimer;
     private bool _changedBG;
+    public bool finalLvl;
     
     void Start()
     {
+        if(SceneManager.GetActiveScene().name == "Level18") finalLvl = true;
+        else finalLvl = false;
         _canvasGroup.alpha = 1;
         _prevScene = PlayerPrefs.GetString(_prevSceneKey, "DefaultSceneName");
         if(_prevScene == _mainMenuScene && SceneManager.GetActiveScene().name == _tutScene)

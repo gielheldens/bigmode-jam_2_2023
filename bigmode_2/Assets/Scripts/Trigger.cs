@@ -51,5 +51,6 @@ public class Trigger : MonoBehaviour
     {
         if (transform.parent.CompareTag(staticTag)) _sprite.color = drawManager.colors[0];
         else _sprite.color = drawManager.colors[1];
+        if (transform.parent.CompareTag("Final")) _sprite.color = drawManager.colors[2];
     }
 }

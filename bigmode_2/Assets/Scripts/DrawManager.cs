@@ -80,6 +80,7 @@ public class DrawManager : MonoBehaviour
             if (drawMode == RigidbodyType2D.Static) _currentLine.SetLineColor(colors, 0);
             //if (drawMode == RigidbodyType2D.Kinematic) _currentLine.SetLineColor(colors, 0);
             else _currentLine.SetLineColor(colors, 1);
+            if (parent.CompareTag("Final")) _currentLine.SetLineColor(colors, 2);
             drawing = true;
         }
         else if (_draw && drawing)
@@ -107,6 +108,7 @@ public class DrawManager : MonoBehaviour
     private RigidbodyType2D DrawMode(Transform parent)
     {
         if (parent.CompareTag("Static")) return RigidbodyType2D.Static;
+        else if (parent.CompareTag("Final")) return RigidbodyType2D.Static;
         //if (parent.CompareTag("Static")) return RigidbodyType2D.Kinematic;
         return RigidbodyType2D.Dynamic;
     }
