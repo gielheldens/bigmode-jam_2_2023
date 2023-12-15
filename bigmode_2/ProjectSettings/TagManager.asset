@@ -13,6 +13,9 @@ TagManager:
   - LevelManager
   - Environment
   - UIManager
+  - PauseMenu
+  - Overlay
+  - UICanvas
   layers:
   - Default
   - TransparentFX
@@ -67,6 +70,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3686872231
+    locked: 0
+  - name: Overlay
+    uniqueID: 1784672613
     locked: 0
   - name: Menu
     uniqueID: 2565366495

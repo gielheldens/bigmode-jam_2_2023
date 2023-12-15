@@ -46,6 +46,16 @@ public class Button : MonoBehaviour
         _text.fontSize /= _hoverFontFactor;
     }
 
+    public void EnlargeImage(Image _image)
+    {
+        _image.rectTransform.sizeDelta *= _hoverFontFactor;
+    }
+
+    public void CompressImage(Image _image)
+    {
+        _image.rectTransform.sizeDelta /= _hoverFontFactor;
+    }
+
     public void SetCanvasImage(string _fileName)
     {
         Sprite sprite = Resources.Load<Sprite>(_fileName);
