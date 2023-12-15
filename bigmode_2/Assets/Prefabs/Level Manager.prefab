@@ -171,6 +171,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _crossfade: {fileID: 3889940072946860204}
   _canvasGroup: {fileID: 8197736230998078938}
+  _tutGroup: {fileID: 0}
+  _lvl01Group: {fileID: 0}
   _fadeOutTime: 0.6
 --- !u!1 &8249061152648559567
 GameObject:

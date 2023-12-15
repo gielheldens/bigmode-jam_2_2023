@@ -12,19 +12,22 @@ public class Button : MonoBehaviour
 
     [Header ("Tags")]
     [SerializeField] private string _uiManagerTag;
+    [SerializeField] private string _levelManagerTag;
 
     // private references
     private UIManager _uiManager;
+    private LevelManager _levelManager;
 
     // Start is called before the first frame update
     void Start()
     {
         _uiManager = GameObject.FindWithTag(_uiManagerTag).GetComponent<UIManager>();
+        _levelManager = GameObject.FindWithTag(_levelManagerTag).GetComponent<LevelManager>();
     }
 
     public void PlayLevel(string _lvl)
     {
-        _uiManager.PlayLevel(_lvl);
+        _levelManager.LoadNextNameLevel(_lvl);
     }
 
     public void EnlargeText(TextMeshProUGUI _text)

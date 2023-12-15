@@ -19,13 +19,4 @@ public class UIManager : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex == 0) inMenu = true;
     }
 
-    public void PlayLevel(string _level)
-    {
-        SceneManager.LoadScene(_level);
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
