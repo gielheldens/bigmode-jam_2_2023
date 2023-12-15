@@ -171,9 +171,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _crossfade: {fileID: 3889940072946860204}
   _canvasGroup: {fileID: 8197736230998078938}
-  _tutGroup: {fileID: 0}
-  _lvl01Group: {fileID: 0}
+  _canvasImage: {fileID: 7572359786230592252}
+  _mainMenuScene: MainMenu
+  _BG: Paper_Background
+  _lvl01Scene: Level01
+  _lvl01BG: Paper_Background_Lvl01
+  _tutScene: Tutorial
+  _tutBG: Paper_Background_Tut
   _fadeOutTime: 0.6
+  _prevScene: DefaultSceneName
 --- !u!1 &8249061152648559567
 GameObject:
   m_ObjectHideFlags: 0

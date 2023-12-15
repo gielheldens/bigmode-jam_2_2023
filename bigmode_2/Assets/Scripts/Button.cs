@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.U2D;
+using UnityEngine.UI;
 
 public class Button : MonoBehaviour
 {
@@ -9,6 +11,10 @@ public class Button : MonoBehaviour
     [Header ("References")]
     [SerializeField] private TextMeshProUGUI _buttonTxt;
     [SerializeField] private float _hoverFontFactor;
+    [SerializeField] private string _playerLayer;
+    [SerializeField] private string _environmentLayer;
+    [SerializeField] Image _canvasImage;
+
 
     [Header ("Tags")]
     [SerializeField] private string _uiManagerTag;
@@ -39,4 +45,11 @@ public class Button : MonoBehaviour
     {
         _text.fontSize /= _hoverFontFactor;
     }
+
+    public void SetCanvasImage(string _fileName)
+    {
+        Sprite sprite = Resources.Load<Sprite>(_fileName);
+        _canvasImage.sprite = sprite;
+    }
+        
 }
