@@ -178,7 +178,7 @@ MonoBehaviour:
   _lvl01BG: Paper_Background_Lvl01
   _tutScene: Tutorial
   _tutBG: Paper_Background_Tut
-  _fadeOutTime: 0.6
+  _fadeOutTime: 0.8
   _prevScene: DefaultSceneName
 --- !u!1 &8249061152648559567
 GameObject:

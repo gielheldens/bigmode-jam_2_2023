@@ -7,9 +7,7 @@ public class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [Header ("References")]
-    [SerializeField] private string _lvlTut;
-    [SerializeField] private string _lvl01;
+    //[Header ("References")]
 
     // menu variables
     public bool inMenu;
