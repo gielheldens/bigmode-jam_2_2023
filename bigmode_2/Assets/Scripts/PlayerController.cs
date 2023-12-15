@@ -1,5 +1,6 @@
 //using System.Numerics;
 using System;
+using TMPro.EditorUtilities;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -29,7 +30,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _moveSpeed = 5f;
 
     [Header ("Tags")]
-    [SerializeField] string drawManagerTag;
+    [SerializeField] private string _drawManagerTag;
+    [SerializeField] private string _uiManagerTag;
 
     // movement variables
     private float _horizontalInput;
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
     // private references
     private DrawManager _drawManager;
     private CapsuleCollider2D _collider;
+    private UIManager _uiManager;
 
     // collider attributes
     private Vector2 _colliderSize;
@@ -52,7 +55,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        _drawManager = GameObject.FindWithTag(drawManagerTag).GetComponent<DrawManager>();
+        _drawManager = GameObject.FindWithTag(_drawManagerTag).GetComponent<DrawManager>();
+        _uiManager = GameObject.FindWithTag(_uiManagerTag).GetComponent<UIManager>();
         _collider = GetComponent<CapsuleCollider2D>();
         _colliderSize = _collider.size;
     }
@@ -62,7 +66,6 @@ public class PlayerController : MonoBehaviour
     {
         Inputs();
         AnimationState();
-        Debug.Log(_feet.grounded);
     }
 
     private void FixedUpdate()
@@ -73,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
     private void Inputs()
     {
-        _horizontalInput = Input.GetAxisRaw("Horizontal");
+        if(!_uiManager.inMenu) _horizontalInput = Input.GetAxisRaw("Horizontal");
     }
 
     private void Movement()
@@ -98,7 +101,6 @@ public class PlayerController : MonoBehaviour
             }
             else if (!_feet.grounded)
             {
-                Debug.Log("so we do get here?");
                 velocity = new Vector2(_horizontalInput * _moveSpeed, _rb2d.velocity.y);
                 //velocity.x = _horizontalInput * _moveSpeed;
             }

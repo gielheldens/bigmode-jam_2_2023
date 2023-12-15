@@ -12,6 +12,7 @@ TagManager:
   - Line
   - LevelManager
   - Environment
+  - UIManager
   layers:
   - Default
   - TransparentFX
@@ -66,6 +67,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3686872231
+    locked: 0
+  - name: Menu
+    uniqueID: 2565366495
     locked: 0
   - name: Fade
     uniqueID: 477201265

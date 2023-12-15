@@ -294,4 +294,5 @@ MonoBehaviour:
   _frictionless: {fileID: 6200000, guid: f59c7f5f0b2fb3647876bb7bafa282a2, type: 2}
   _friction: {fileID: 6200000, guid: 5daaa02f5e3a20847887c4a8ad2efc7a, type: 2}
   _moveSpeed: 3
-  drawManagerTag: DrawManager
+  _drawManagerTag: DrawManager
+  _uiManagerTag: UIManager
