@@ -23,6 +23,9 @@ public class DrawManager : MonoBehaviour
     // private references
     private Camera _cam;
 
+    [Header ("Sounds")]
+    [SerializeField] private AudioSource _drawingSound;
+
     public const float RESOLUTION = 0.1f;
 
     // draw variables
@@ -31,6 +34,7 @@ public class DrawManager : MonoBehaviour
     private Transform _hoverDrawParent = null;
     private Transform _drawParent = null;
     private bool _draw;
+    private bool _playingDrawSound;
 
 
     void Start()
@@ -49,6 +53,18 @@ public class DrawManager : MonoBehaviour
         if((_draw && _drawParent!= null) || drawing) 
         {
             Draw(mousePos, _drawParent, DrawBox(_drawParent), DrawMode(_drawParent));
+        }
+
+        if (drawing && !_playingDrawSound) 
+        {
+            Debug.Log("do we get here?");
+            _playingDrawSound = true;
+            _drawingSound.Play();
+        }
+        else if (!drawing) 
+        {
+            _playingDrawSound = false;
+            _drawingSound.Stop();
         }
     }
 
