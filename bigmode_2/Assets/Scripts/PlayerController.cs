@@ -1,11 +1,7 @@
 //using System.Numerics;
 using System;
-using TMPro.EditorUtilities;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.TextCore.Text;
 
 public class PlayerController : MonoBehaviour
 {
