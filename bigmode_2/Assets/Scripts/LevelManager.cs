@@ -43,10 +43,10 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        if(SceneManager.GetActiveScene().name == "Level18") finalLvl = true;
+        if(SceneManager.GetActiveScene().name == "Level19") finalLvl = true;
         else finalLvl = false;
 
-        if(SceneManager.GetActiveScene().name == "Level19") _schoolBell.Play();
+        if(SceneManager.GetActiveScene().name == "Level20") _schoolBell.Play();
 
         _canvasGroup.alpha = 1;
         _prevScene = PlayerPrefs.GetString(_prevSceneKey, "DefaultSceneName");
