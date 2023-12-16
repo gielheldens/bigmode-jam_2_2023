@@ -37,8 +37,8 @@ public class LevelManager : MonoBehaviour
     
     void Awake()
     {
-        _music = GameObject.FindWithTag("Music");
-        DontDestroyOnLoad(_music);
+        //_music = GameObject.FindWithTag("Music");
+        //DontDestroyOnLoad(_music);
     }
 
     void Start()
