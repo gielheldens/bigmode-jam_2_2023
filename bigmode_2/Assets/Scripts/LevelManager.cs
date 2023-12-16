@@ -21,11 +21,12 @@ public class LevelManager : MonoBehaviour
     [Header ("Attributes")]
     [SerializeField] private float _fadeOutTime;
 
+    [Header ("Sounds")]
+    [SerializeField] private AudioSource _schoolBell;
+
     // private references
     private GameObject _music;
     
-
-
     // private variables
     public string _prevScene ="DefaultSceneName";
     private string _prevSceneKey = "PreviousScene";
@@ -44,6 +45,9 @@ public class LevelManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Level18") finalLvl = true;
         else finalLvl = false;
+
+        if(SceneManager.GetActiveScene().name == "Level19") _schoolBell.Play();
+
         _canvasGroup.alpha = 1;
         _prevScene = PlayerPrefs.GetString(_prevSceneKey, "DefaultSceneName");
         if(_prevScene == _mainMenuScene && SceneManager.GetActiveScene().name == _tutScene)

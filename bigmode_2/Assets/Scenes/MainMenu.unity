@@ -2593,6 +2593,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 357852175914267801, guid: 3840fe8278f37e946872f689e98c0685, type: 3}
+      propertyPath: _schoolBell
+      value: 
+      objectReference: {fileID: 2070783142}
     - target: {fileID: 3428064464227563705, guid: 3840fe8278f37e946872f689e98c0685, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2633,6 +2637,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4461355932529954567, guid: 3840fe8278f37e946872f689e98c0685, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461355932529954567, guid: 3840fe8278f37e946872f689e98c0685, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461355932529954567, guid: 3840fe8278f37e946872f689e98c0685, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 816e6c23747cb144f968b6fed879dcdd, type: 3}
+    - target: {fileID: 4461355932529954567, guid: 3840fe8278f37e946872f689e98c0685, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7524310617228778731, guid: 3840fe8278f37e946872f689e98c0685, type: 3}
       propertyPath: m_Name
       value: Level Manager
@@ -2642,6 +2662,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3840fe8278f37e946872f689e98c0685, type: 3}
+--- !u!82 &2070783142 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4461355932529954567, guid: 3840fe8278f37e946872f689e98c0685, type: 3}
+  m_PrefabInstance: {fileID: 2070783141}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8115183230162859233
 PrefabInstance:
   m_ObjectHideFlags: 0
