@@ -49,12 +49,11 @@ MonoBehaviour:
   _drawBoxLayer:
     serializedVersion: 2
     m_Bits: 512
-  lineName: Drawing
+  _lineName: Current Line
   colors:
   - {r: 0.6745098, g: 0.19607843, b: 0.20784314, a: 1}
   - {r: 0.050980397, g: 0.6745098, b: 0.5803922, a: 1}
-  drawBoxTag: DrawBox
-  cameraTag: MainCamera
+  _cameraTag: MainCamera
   drawing: 0
   _drawingSound: {fileID: 8742450559435932171}
 --- !u!82 &8742450559435932171

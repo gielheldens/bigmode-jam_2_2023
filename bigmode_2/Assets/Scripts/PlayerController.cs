@@ -1,4 +1,3 @@
-//using System.Numerics;
 using System;
 using UnityEditor;
 using UnityEngine;
@@ -6,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header ("References")]
-    //[SerializeField] private DrawManager _drawManager;
     [SerializeField] private Rigidbody2D _rb2d;
     [SerializeField] private string _playerWalk;
     [SerializeField] private string _playerIdle;
@@ -98,7 +96,6 @@ public class PlayerController : MonoBehaviour
             else if (!_feet.grounded)
             {
                 velocity = new Vector2(_horizontalInput * _moveSpeed, _rb2d.velocity.y);
-                //velocity.x = _horizontalInput * _moveSpeed;
             }
         }
         _rb2d.velocity = velocity;
@@ -131,7 +128,6 @@ public class PlayerController : MonoBehaviour
             _onSlope = false;
             _slopeSideAngle = 0f;
         }
-
     }
 
     private void SlopeCheckVert(Vector2 _pos)

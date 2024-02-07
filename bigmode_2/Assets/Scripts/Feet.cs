@@ -12,17 +12,14 @@ public class Feet : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        //grounded = true;
         if (other.CompareTag(_lineTag) || other.CompareTag(_environmentTag))
         {
             grounded = true;
         }
-        
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        //grounded = false;
         if (other.CompareTag(_lineTag) || other.CompareTag(_environmentTag))
         {
             grounded = false;
